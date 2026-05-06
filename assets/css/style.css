@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+  background: linear-gradient(145deg, #eaf7e6 0%, #c8e6d9 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+/* Container principal para empilhar card + footer */
+.login-container {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card branco com sombra suave */
+.login-card {
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 2.2rem 2rem 2.5rem;
+  box-shadow: 0 20px 35px -12px rgba(0, 32, 16, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Marca / identidade visual */
+.brand {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.logo-icon {
+  font-size: 3rem;
+  background: #eef6e9;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 0 auto 0.8rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+}
+
+.brand h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1a4d2c;
+  letter-spacing: -0.3px;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #4b6b53;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  border-top: 1px solid #e2efe4;
+  display: inline-block;
+  padding-top: 0.5rem;
+}
+
+/* Subtítulo do formulário */
+.form-header {
+  text-align: center;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.form-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1f2e24;
+  margin-bottom: 8px;
+}
+
+.accent-line {
+  width: 60px;
+  height: 4px;
+  background: #3faa5e;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+/* Grupos de input */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1e3a2f;
+  letter-spacing: -0.2px;
+  margin-left: 0.25rem;
+}
+
+.input-icon-field {
+  display: flex;
+  align-items: center;
+  background: #f9fbf9;
+  border: 1px solid #ddebe0;
+  border-radius: 1.2rem;
+  transition: all 0.2s;
+  padding: 0.1rem 0.1rem 0.1rem 0.75rem;
+}
+
+.input-icon-field:focus-within {
+  border-color: #2c8c4a;
+  box-shadow: 0 0 0 3px rgba(47, 167, 89, 0.2);
+  background: #ffffff;
+}
+
+.field-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+.input-icon-field input {
+  width: 100%;
+  padding: 0.85rem 0.85rem 0.85rem 0;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1c2e23;
+  outline: none;
+}
+
+.input-icon-field input::placeholder {
+  color: #a5c0ae;
+  font-weight: 400;
+}
+/* Botão ENTRAR principal */
+.btn-entrar {
+  background: linear-gradient(95deg, #238b45 0%, #1a6e3b 100%);
+  border: none;
+  padding: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: 0.18s linear;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.btn-entrar:hover {
+  background: linear-gradient(95deg, #1e713b 0%, #145a30 100%);
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.btn-entrar:active {
+  transform: scale(0.97);
+}
+
+/* Link para cadastro gratuito */
+.signup-prompt {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #3f5c49;
+  border-top: 1px solid #e4efdf;
+  padding-top: 1.5rem;
+}
+
+.signup-link {
+  color: #1f7840;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  transition: color 0.2s;
+}
+
+.signup-link:hover {
+  color: #0e562f;
+  text-decoration: underline;
+}
+
+/* Footer (rodapé) */
+.footer {
+  text-align: center;
+}
+
+.footer-content {
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 2rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.75rem;
+  color: #2c523c;
+}
+
+.copyright {
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+}
+
+.footer-links a {
+  color: #2e6b45;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #124b2a;
+}
+
+.separator {
+  opacity: 0.6;
+  color: #668b74;
+}
+
+/* RESPONSIVIDADE (Mobile first, já adaptável) */
+@media (max-width: 520px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .login-card {
+    padding: 1.8rem 1.5rem 2rem;
+    border-radius: 1.5rem;
+  }
+  
+  .brand h1 {
+    font-size: 1.6rem;
+  }
+  
+  .form-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .btn-entrar {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .input-icon-field input {
+    padding: 0.7rem 0.7rem 0.7rem 0;
+  }
+  
+  .footer-content {
+    padding: 0.7rem 1rem;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-card {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .checkbox-label {
+    gap: 0.45rem;
+  }
+  
+  .signup-prompt {
+    font-size: 0.8rem;
+  }
+}
