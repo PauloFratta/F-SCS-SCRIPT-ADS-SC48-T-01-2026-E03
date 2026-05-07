@@ -279,7 +279,8 @@
         <div class="accent-line"></div>
       </div>
 
-      <form class="cadastro-form" action="#" method="post">
+      <!-- action atualizado -->
+      <form class="cadastro-form" action="/controllers/cad_usuarios.php" method="post">
         <div class="input-group">
           <label for="nome">Nome completo</label>
           <input type="text" id="nome" name="nome" class="input-field" placeholder="Seu nome" autocomplete="name" required>
@@ -304,8 +305,19 @@
 
         <div class="login-prompt">
           <span>Já tem uma conta?</span>
-          <a href="/models/login.html" class="login-link">Faça login</a>
+          <a href="/models/login.php" class="login-link">Faça login</a>
         </div>
+      <?php if (isset($_GET['erro'])): ?>
+        <div style="color:#d32f2f; background:#ffebee; padding:0.75rem; border-radius:8px; margin-top:1rem; text-align:center;">
+          <?php if ($_GET['erro'] === 'campos'): ?>
+            ⚠️ Preencha todos os campos.
+          <?php elseif ($_GET['erro'] === 'email'): ?>
+            ⚠️ Os e-mails não coincidem 
+          <?php elseif ($_GET['erro'] === 'existe'): ?>
+            OU e-mail já está cadastrado.
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
       </form>
     </div>
 

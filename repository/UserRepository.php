@@ -12,4 +12,13 @@ class UserRepository {
         $stmt->execute([$email,$senha]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function CadastrarUsuario($nome, $email, $senha) {
+        try {
+            $stmt = $this->db->prepare("INSERT INTO usuarios (nome, email, senha, tipo) VALUES (?, ?, ?, 'usuario')");
+            $stmt->execute([$nome, $email, $senha]);
+            return true;
+        } catch (PDOException $e) {
+            return false; // e-mail duplicado ou outro erro
+        }
+    }    
 }

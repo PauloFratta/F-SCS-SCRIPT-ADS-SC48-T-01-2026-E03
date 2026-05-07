@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['password'] ?? '';
 
     if ($email === '' || $senha === '') {
-        header('Location: ../models/login.html?erro=1');
+        header('Location: ../models/login.php?erro=1');
         exit;
     }
 
@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../models/menu.html');
         exit;
     } else {
-        header('Location: ../models/login.html?erro=1');
+        header('Location: ../models/login.php?erro=1');
         exit;
     }
 } else {
-    header('Location: ../models/login.html');
+    header('Location: ../models/login.php');
     exit;
 }
 ?>

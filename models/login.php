@@ -23,7 +23,6 @@
       <div class="accent-line"></div>
     </div>
 
-    <!-- ALTERAÇÕES AQUI: action aponta para login.php, method POST, removido onsubmit -->
     <form class="login-form" action="/controllers/login.php" method="post">
       <div class="input-group">
         <label for="email">E-mail</label>
@@ -45,15 +44,19 @@
 
       <div class="signup-prompt">
         <span>Não tem uma conta?</span>
-        <a href="/models/cad_usuarios.html" class="signup-link">Cadastre-se gratuitamente</a>
+        <a href="/models/cad_usuarios.php" class="signup-link">Cadastre-se gratuitamente</a>
       </div>
     </form>
 
-    <!-- Área para exibir mensagens de erro (opcional: pode ser mostrada via PHP na mesma página) -->
     <?php if (isset($_GET['erro'])): ?>
       <div class="error-message" style="color:#d32f2f; background:#ffebee; padding:0.75rem; border-radius:8px; margin-top:1rem; text-align:center;">
         ⚠️ E-mail ou senha inválidos. Tente novamente.
       </div>
+    <?php endif; ?>
+    <?php if (isset($_GET['sucesso'])): ?>
+        <div style="color:#1a4d2c; background:#eaf7e6; padding:0.75rem; border-radius:8px; margin-top:1rem; text-align:center;">
+            ✅ Cadastro realizado! Faça login.
+        </div>
     <?php endif; ?>
   </div>
 

@@ -7,12 +7,11 @@ require __DIR__ . '/connection.php';
 try {
     $conn = Database::connect();
 
-    $result = $conn->query("SELECT sqlite_version()");
+    $result = $conn->query("SELECT VERSION()");
     $version = $result->fetchColumn();
 
-    echo "✅ Banco conectado! Versão do SQLite: " . $version;
+    echo "✅ Banco conectado! Versão do MySQL: " . $version;
 
 } catch (Exception $e) {
     echo "❌ Erro: " . $e->getMessage();
 }
-// Banco OK! Conectado.
