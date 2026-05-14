@@ -21,4 +21,13 @@ class UserRepository {
             return false; // e-mail duplicado ou outro erro
         }
     }    
+    public function CadastrarOng($nome, $descricao, $email, $telefone, $site, $endereco) {
+    try {
+        $stmt = $this->db->prepare("INSERT INTO ongs (nome, descricao, email, telefone, site, endereco) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$nome, $descricao, $email, $telefone, $site, $endereco]);
+        return true;
+    } catch (PDOException $e) {
+        return false;
+    }
+}
 }
